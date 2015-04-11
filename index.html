@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>H1B</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="scripts/typed.min.js"></script>
+  <script src="scripts/fwd.headlines.js"></script>
   <style>
     body {
       font-family: 'Open Sans Condensed', sans-serif;
@@ -21,12 +24,23 @@
       box-shadow: 0 2px 3px #ecebe9;
     }
 
+    header h1 {
+      position: absolute;
+      margin: 0 auto;
+      text-align: center;
+      top: 25px;
+      width: 100%;
+    }
+
     header .cta {
       float: right;
-      background: #369ff4; 
+      background: #369ff4;
       border-radius: 3em;
       margin-right: 20px;
-      margin-top: 5px;
+      top: 24px;
+      z-index: 10;
+      position: absolute;
+      right: 20px;
     }
 
     header .cta a {
@@ -48,11 +62,46 @@
       box-shadow: 0px 0px 20px 0 #2E2D2C;
     }
 
+    #headline-target {
+      text-align: center;
+      font-size: 2em;
+      text-transform: uppercase;
+    }
+
+    #headline-target a {
+      color: #fff;
+    }
+
+    .typed-cursor{
+      font-size: 42px;
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    @keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+    @-webkit-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+    @-moz-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+
+
   </style>
 </head>
 <body>
   <header>
     <img src="http://austin.fwd.us/images/fwd-logo.svg" alt="" width="200">
+    <h1>High-Skilled Immigration Creates Jobs</h1>
     <div class="cta">
       <a class="btn" href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Faustin.fwd.us%2F&amp;related=fwd_us&amp;text=%40RepBillFlores%20TX%20has%20lost%20%2417%2C130%2C630%20without%20%23ImmigrationAction.%20It%27s%20time%20to%20%23LeadOnReform%20and%20pass%20%23CIR%20http%3A%2F%2Faustin.fwd.us%2F">   
         <span class="label" id="l">
@@ -62,7 +111,7 @@
     </div>
   </header>
   <div class="container">
-    <h1>Hello world</h1>
+    <span id="headline-target" class="headline"></span>
   </div>
 </body>
 </html>
