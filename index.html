@@ -5,8 +5,11 @@
   <title>H1B</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
   <script src="scripts/typed.min.js"></script>
   <script src="scripts/fwd.headlines.js"></script>
+  <script src="scripts/stats.js"></script>
   <style>
     body {
       font-family: 'Open Sans Condensed', sans-serif;
@@ -62,6 +65,22 @@
       box-shadow: 0px 0px 20px 0 #2E2D2C;
     }
 
+    .container .cta {
+      background: #fff;
+      border-radius: 3em;
+      text-align: center;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .container .cta a {
+      font-size: 2em;
+      margin: 1em 0 1em 0;
+      color: #2E2D2C;
+      text-decoration: none;
+      padding: 1em; 
+    }
+
     #headline-target {
       text-align: center;
       font-size: 2em;
@@ -95,6 +114,12 @@
         100% { opacity:1; }
     }
 
+    .qa {
+      font-size: 1.35em;
+      max-width: 750px;
+      margin: 20px auto;
+    }
+
 
   </style>
 </head>
@@ -103,7 +128,7 @@
     <img src="http://austin.fwd.us/images/fwd-logo.svg" alt="" width="200">
     <h1>High-Skilled Immigration Creates Jobs</h1>
     <div class="cta">
-      <a class="btn" href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Faustin.fwd.us%2F&amp;related=fwd_us&amp;text=%40RepBillFlores%20TX%20has%20lost%20%2417%2C130%2C630%20without%20%23ImmigrationAction.%20It%27s%20time%20to%20%23LeadOnReform%20and%20pass%20%23CIR%20http%3A%2F%2Faustin.fwd.us%2F">   
+      <a class="btn" href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Faustin.fwd.us%2F&amp;related=fwd_us&amp;text=%40RepBillFlores%20TX%20has%20lost%20%2417%2C130%2C630%20without%20%23ImmigrationAction.%20It%27s%20time%20to%20%23LeadOnReform%20and%20pass%20%23CIR%20http%3A%2F%2Faustin.fwd.us%2F" target="_blank">   
         <span class="label" id="l">
             <strong>Tweet</strong>
         </span>
@@ -112,6 +137,35 @@
   </header>
   <div class="container">
     <span id="headline-target" class="headline"></span>
+    <div class="qa">
+      <strong>Q: Hey, I’ve been hearing a lot about H-1B visas lately, but what exactly are they?</strong>
+      <div>A: The H-1B visa is the most common visa awarded to “high-skilled” immigrants who want to work in the U.S. Every year, the government awards 65,000 H-1B visas to immigrants with bachelor’s degrees and 20,000 H-1B visas to immigrants with master’s degrees. But that’s nowhere close to meeting the demand: in 2014, the government received over 172,000 H-1B visa applications.</div>
+
+      <strong>Q: But that’s good, right? If we let in too many immigrants, won’t they take all our jobs?</strong>
+      <div>A: NO! The opposite is actually true. In fact, for every 100 H-1B visas the government awards to immigrants, an additional 183 American jobs are created.</div>
+
+      <strong>Q: But… wait. That can’t be right. When immigrants fill open jobs, they’re obviously taking a job from an American.</strong>
+      <div>A: The thing is, high-skilled immigrants create jobs in two ways: they support workers across the economy simply by spending their paychecks, and they help their companies to succeed so they can hire even more employees. Just think about it – every time an immigrant buys a house, she helps a realtor stay in business. And if a local startup can find just the right engineer to help them rake in an extra million in billings, they can hire a ton more employees.</div>
+
+      <strong>Q: Hmm… okay. That makes sense. Maybe there’s something to immigration reform, after all.</strong>
+      A: Absolutely! And we’d better hurry up: we’ve lost out on over $24 billion in tax revenue since 2013.
+    </div>
+    <section id="visa-stats">
+        <form id="stats-form">
+            <input id="visa-quantity" type="number">
+            <button>Submit</button>
+        </form>
+        
+        <div id="stats-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </section>
+    <div class="cta">
+      <a class="btn" href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Faustin.fwd.us%2F&amp;related=fwd_us&amp;text=%40RepBillFlores%20TX%20has%20lost%20%2417%2C130%2C630%20without%20%23ImmigrationAction.%20It%27s%20time%20to%20%23LeadOnReform%20and%20pass%20%23CIR%20http%3A%2F%2Faustin.fwd.us%2F" target="_blank">   
+        <span class="label" id="l">
+            <strong>Tweet</strong>
+        </span>
+      </a>
+
+    </div>
   </div>
 </body>
 </html>
